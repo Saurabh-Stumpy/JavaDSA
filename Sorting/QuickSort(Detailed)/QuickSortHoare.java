@@ -1,7 +1,14 @@
 import java.util.Arrays;
 
-public class HoarePartition {
+public class QuickSortHoare {
 
+    public static void quicksort(int[] arr,int l,int h){
+        if(l<h){
+            int m =hoarePartition(arr, l, h);
+            quicksort(arr,l,m);
+            quicksort(arr,m+1,h);
+        }
+    }
     public static int hoarePartition(int[] arr,int l,int h){
         int i= l-1;
         int j= h+1;
@@ -29,14 +36,10 @@ public class HoarePartition {
     }
 
     public static void main(String[] args) {
-        int[] arr = {40,10,90,30,70,60,20,50};
+        int[] arr={2,3,1,7,4,6,5};
 
-        System.out.println("Before Partition : ");
-        System.out.println(Arrays.toString(arr));
+        quicksort(arr,0,6);
 
-        System.out.println(hoarePartition(arr,0,arr.length-1));
-
-        System.out.println("After Partiotion : ");
         System.out.println(Arrays.toString(arr));
     }
 }
