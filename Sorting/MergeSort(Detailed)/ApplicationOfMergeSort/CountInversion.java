@@ -58,7 +58,7 @@ public class CountInversion {
     }
 
     public static void main(String[] args) {
-        int[] arr = {4,7,3,5 };
+        int[] arr = {4,7,3,5};
 
         System.out.println(mergeSort(arr,0,arr.length-1));
 
